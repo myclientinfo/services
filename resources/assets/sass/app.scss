@@ -1,0 +1,48 @@
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+body {
+  padding-top: 70px;
+}
+
+h3 {
+
+}
+
+.full_image {
+  width:250px;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.full_visible {
+  opacity: 1;
+}
+
+#profile_thumbs img {
+  width:80px;
+  margin:2px
+}
+
+.supplier_category h3 {
+  text-transform: capitalize;
+}
+
+.supplier_category {
+  list-style-type: none;
+}
+
+.supplier_category li {
+  list-style-type: none;
+}
+
+#supplier_listing {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+#supplier_listing li {
+  height: 300px;
+}
