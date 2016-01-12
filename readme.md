@@ -32,3 +32,16 @@ Some core functionality is deliberately missing. Chief among these is support fo
 
 ##More Detailed Installation Instructions
 
+####Gaining Access
+
+Any business built on this base application should [fork the git repository](https://help.github.com/articles/fork-a-repo/) in order to create a clean foundation for development. Syncing with upstream will allow any new features to be gained.
+
+####Application Setup
+
+Once on a capable environment, run <code>composer install</code> to build PHP dependencies. Set up configuration <a href="https://laravel.com/docs/5.2#confiugration">as per Laravel docs</a>. Run `artisan migrate` to build an empty database structure. Alternatively run `artisan migrate:refresh --seed` to build test data via [model factories](https://laravel.com/docs/5.2/seeding#using-model-factories).
+
+####Customising your Application
+
+Most visual changes can be done by modifying the app.scss file and blade templates. Customising of application functionality will depend a great deal on specific requirements.
+
+Details of this must be left up to the developer.
