@@ -1,36 +1,43 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
 Route::get('/', function () {
     return view('homepage');
 });
 
-Route::get('/register', 'RegistrationController@create');
 
+// Auth routes
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+
+// create user routes
+Route::get('/register', ['as'=>'register', 'uses' => 'RegistrationController@create']);
 Route::post('/register', 'RegistrationController@store');
+Route::get('/customer', 'RegistrationController@createUser');
+Route::post('/customer', 'RegistrationController@storeUser');
 
-Route::get('/search', ['as'=>'search',
-                        'uses' =>'SuppliersController@index']);
+// search and display profiles
+Route::get('/search', ['as'=>'search', 'uses' =>'SuppliersController@index']);
 Route::post('/search', 'SuppliersController@search');
-Route::get('/supplier/{id}', ['as' => 'profile',
-                                'uses' => 'SuppliersController@show']);
+Route::get('/supplier/{id}', ['as' => 'profile', 'uses' => 'SuppliersController@show']);
 
-// signup - user
-// signup - provider
-// signup
-// search
-// provider services
-// admin login
 
-// admin lookup tables
-// admin regions
+// customer profile viewing and editing
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/profile', 'SuppliersController@profile');
+    Route::get('/profile/edit', 'SuppliersController@edit');
+    Route::post('/profile/edit', 'SuppliersController@update');
+});
+
+Route::group(['prefix' => 'api'], function() {
+
+    Route::get('/services/', 'ServicesController@edit');
+
+    Route::group(['middleware'=>'auth'], function(){
+        Route::get('/supplier_services/', 'SuppliersController@supplierServices');
+        Route::post('/supplier_services/', 'SuppliersController@saveSupplierServices');
+    });
+
+});
+

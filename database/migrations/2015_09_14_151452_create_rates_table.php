@@ -15,9 +15,8 @@ class CreateRatesTable extends Migration
         Schema::create('rates', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('supplier_id')->unsigned();
-            $table->string('time');
+            $table->integer('period_id')->unsigned();
             $table->string('price');
-            $table->timestamps();
         });
     }
 

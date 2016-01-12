@@ -1,11 +1,140 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+$navbar-bg: #FF8F5E;
+
 body {
-  padding-top: 70px;
+  position: relative;
+
+  .list-group-item {
+    color: #B33C12;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+
+  .form-control {
+    border-radius: 1px;
+  }
+
+  .register-side-category {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .landing-header{
+    background-size: cover;
+    min-height: 570px;
+  }
+  .landing-header .motto{
+    padding-top: 8%;
+    text-align: left;
+    z-index: 3;
+  }
+  .landing-section{
+    padding: 100px 0;
+  }
+  .landing-section .btn-simple{
+    padding: 0;
+  }
+  .landing-section .column{
+    padding: 0 75px 0 25px;
+  }
+
+  ul.pagination {
+    margin: 0 auto;
+
+    li a {
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+  }
+
+  .edit-rates {
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    .primary {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 2px;
+    }
+
+    li {
+      padding: 8px;
+    }
+  }
+
+  .services-top {
+    margin-top: 25px;
+  }
+
+  .rate_input {
+    color: black;
+    width: 50px;
+  }
+
+  .footer-demo {
+    background-attachment: fixed;
+    position: relative;
+    line-height: 20px;
+  }
+
+  .footer-demo nav > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+  }
+  .footer-demo nav > ul > li{
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 15px 3px;
+    line-height: 20px;
+    text-align: center;
+  }
+  .footer-demo nav > ul > li:first-child{
+    margin: 0;
+    padding: 0;
+  }
+  .footer-demo nav > ul a:not(.btn) {
+    color: #777777;
+    display: block;
+    margin-bottom: 3px;
+  }
+  .footer-demo nav > ul a:not(.btn):hover, .footer nav > ul a:not(.btn):focus {
+    color: #E3E3E3;
+  }
+  .footer-demo .copyright {
+    color: #777777;
+    padding: 10px 15px;
+    font-size: 14px;
+    margin: 15px 3px;
+    line-height: 20px;
+    text-align: center;
+  }
+  .footer-demo .heart{
+    color: #EB5E28;
+  }
+
 }
 
-h3 {
+.navbar {
+  background-color: $navbar-bg;
+  color: #B33C12;
 
+  .navbar-brand {
+    font-size: 20px;
+  }
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #B33C12;
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+  background-color: #B33C12;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #B33C12;
 }
 
 .full_image {
@@ -42,7 +171,36 @@ h3 {
   padding: 0;
 }
 
+.admin-index-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
 #supplier_listing li {
   height: 300px;
+}
+
+#login-panel {
+  label {
+    color: #B33C12;
+  }
+
+  .panel-heading {
+    padding-bottom: 0;
+  }
+
+  input {
+    border: 1px solid red;
+  }
+
+  p {
+    color: #B33C12;
+  }
+}
+
+.errors {
+  li {
+    color: red;
+  }
 }

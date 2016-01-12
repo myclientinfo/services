@@ -17,19 +17,10 @@ var paths = {
   'assets': './resources/assets/'
 }
 
-
-//elixir(function(mix) {
-//  mix.sass("app.scss", 'public/css/', {includePaths: [paths.bootstrap + 'stylesheets/']})
-//    .copy(paths.bootstrap + 'fonts/bootstrap/**', 'public/fonts')
-//    .scripts([
-//      paths.jquery + "dist/jquery.js",
-//      paths.bootstrap + "javascripts/bootstrap.js"
-//    ], './', 'public/js/app.js');
-//});
-
 elixir(function(mix){
   //mix.copy(paths.bootstrap, );
   mix.sass('app.scss')
+    .styles('ct-paper.css')
     .scripts([paths.jquery, paths.assets+'js/main.js'], 'public/js/main.js', './');
 });
 

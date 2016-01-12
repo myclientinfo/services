@@ -13,10 +13,24 @@ class RatesTableSeeder extends Seeder
     {
         DB::table('rates')->truncate();
 
+        $amounts = [100, 150, 180];
         foreach (App\Supplier::all() as $supplier) {
-            //for($i=0; $i <= 5; $i++){
-            $supplier->rates()->save(factory(App\Rate::class)->make());
-            //}
+            $amount = $amounts[array_rand($amounts)];
+
+            for($i=1; $i <= 4; $i++){
+
+                $this_amount = $i==4 ? $amount * 7 : $amount * $i;
+
+                $rate_data = [
+                    'supplier_id' => $supplier->id,
+                    'period_id'=> $i,
+                    'price' => $this_amount
+                ];
+
+                $rate = new \App\Rate($rate_data);
+
+                $supplier->rates()->save($rate);
+            }
         }
     }
 }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Supplier extends Model
 {
     public $timestamps = false;
-    protected $fillable = ['name', 'active'];
+    protected $fillable = ['title', 'summary', 'type_id', 'description'];
 
     public function type()
     {

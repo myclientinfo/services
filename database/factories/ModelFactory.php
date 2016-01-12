@@ -15,8 +15,8 @@ $factory->define(App\User::class, function ($faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->email,
-        'password' => str_random(10),
-        'remember_token' => str_random(10),
+        'password' => bcrypt('TESTING'),
+        'remember_token' => '',
     ];
 });
 
@@ -73,7 +73,7 @@ $factory->define(App\Photo::class, function ($faker) {
 $factory->define(App\Rate::class, function ($faker) {
     $multiplier = rand(10, 15);
     return [
-        'time' => 'Hourly',
-        'price' => $multiplier * 10
+        'price' => $multiplier * 10,
+        'period_id' => $faker->numberBetween(1,3)
     ];
 });

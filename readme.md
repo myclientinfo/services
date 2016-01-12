@@ -1,27 +1,34 @@
-## Laravel PHP Framework
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+##Application Information
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+                           
+####This project is created as an increasingly complete application for managing services and service providers.
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+It allows people to list their ability to provide a series of services - examples might include companies that provide gardening services, or freelance programmers who offer specific skills. Potential employers in need of these services can find matching service providers.
 
-## Official Documentation
+This is not intended to be a turn-key business, but a base application and an example of technology implementation. Anyone wishing to implement an application using this as a base should <a href="https://github.com/myclientinfo/services">fork the repository on github</a>.
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+##ToDo
 
-## Contributing
+This list of features should shrink over time.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+* An [admin interface](http://laravelpanel.com/) is needed to provide lookup table information.
+* [Cucumber/behat](https://github.com/Behat/Behat) based acceptance testing
+* [Codeship](https://codeship.com/) - Cloud based continuous integration and deployment
+* [Blackfire.io](https://blackfire.io) - Profiler to test and manage performance
+* Redis caching of lookup tables and search results
 
-## Security Vulnerabilities
+##Technology
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+This application platform is built on a core of the Laravel PHP framework - particularly Laravel 5.2. it uses Laravel's built-in Elixir as a wrapper around gulp for pre-processing.
 
-### License
+##Instructions
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+This can be forked or checked out directly, and then installed as per any other Laravel app. Run `composer install` to install PHP dependencies, and run `gulp` to build javascript and CSS resources. Further instructions are below.
+
+##Omissions
+
+Some core functionality is deliberately missing. Chief among these is support for "regions" or location based searching. Correct use of regions and associations is enormously individual to the project and locality.
+
+##More Detailed Installation Instructions
+
